@@ -1,0 +1,56 @@
+﻿CYBERSHIELD 360 - SECURITY LOG ANALYSIS
+================================================
+Total log events: 21
+
+EVENT SUMMARY
+LOGIN_FAILED: 5
+LOGIN_SUCCESS: 4
+REQUEST: 12
+
+NORMAL BEHAVIOUR OBSERVATIONS
+Normal login and request events were present in the dataset.
+This is a sample dataset; it is not enough to establish a real user's baseline behaviour.
+
+ANALYSIS METHOD
+- Flagged 5 or more failed logins for the same user and IP within 10 minutes.
+- Flagged 10 or more requests from the same IP within 5 minutes.
+- Flagged successful logins between 11 PM and before 6 AM.
+- Findings are indicators for investigation, not proof of an attack.
+
+ANNOTATED FINDINGS
+
+Finding 1: MULTIPLE_FAILED_LOGINS
+Severity: HIGH
+Evidence: User=user005, IP=192.168.1.70, 5 failed attempts within 10 minutes; first=2026-10-28 10:10:00
+Reason: Repeated failures may indicate password guessing. Confirm whether the activity was legitimate.
+Status: Requires further investigation; not proof of an attack.
+
+Finding 2: REPEATED_REQUESTS
+Severity: MEDIUM
+Evidence: IP=192.168.1.60, 10 requests within 5 minutes; first=2026-10-28 12:00:00
+Reason: A request burst may indicate automated activity. Check request paths, response codes and expected usage.
+Status: Requires further investigation; not proof of an attack.
+
+Finding 3: UNUSUAL_LOGIN_TIME
+Severity: MEDIUM
+Evidence: User=user004, IP=192.168.1.40, time=2026-10-28 02:30:00, device=Laptop
+Reason: The login occurred between 11 PM and 6 AM. Check the user's normal schedule and confirm legitimacy.
+Status: Requires further investigation; not proof of an attack.
+
+Finding 4: UNUSUAL_LOGIN_TIME
+Severity: MEDIUM
+Evidence: User=user003, IP=192.168.1.30, time=2026-10-28 23:30:00, device=Android
+Reason: The login occurred between 11 PM and 6 AM. Check the user's normal schedule and confirm legitimacy.
+Status: Requires further investigation; not proof of an attack.
+
+RECOMMENDED INVESTIGATION
+- Review account history and confirm repeated failed logins with the user.
+- Check request paths, response codes and request frequency.
+- Confirm unusual-hour logins match the user's normal schedule.
+- Compare findings with additional logs before concluding an attack occurred.
+
+LIMITATIONS
+- Only the supplied sample logs were analysed.
+- The sample is too small to establish a reliable user behaviour baseline.
+- Thresholds are demonstration settings, not universal rules.
+- Missing logs, time-zone differences and clock errors can affect results.

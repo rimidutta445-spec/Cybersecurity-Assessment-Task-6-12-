@@ -1,0 +1,22 @@
+﻿timestamp,user_id,event_type,ip_address,device,details
+2026-10-28 09:00:00,user001,LOGIN_SUCCESS,192.168.1.10,Windows-PC,Normal morning login
+2026-10-28 09:05:00,user002,LOGIN_SUCCESS,192.168.1.20,Laptop,Normal morning login
+2026-10-28 09:10:00,user001,REQUEST,192.168.1.50,Windows-PC,Normal request
+2026-10-28 09:11:00,user001,REQUEST,192.168.1.50,Windows-PC,Normal request
+2026-10-28 23:30:00,user003,LOGIN_SUCCESS,192.168.1.30,Android,Late night login
+2026-10-28 02:30:00,user004,LOGIN_SUCCESS,192.168.1.40,Laptop,Unusual time login
+2026-10-28 10:10:00,user005,LOGIN_FAILED,192.168.1.70,Windows-PC,Incorrect password
+2026-10-28 10:11:00,user005,LOGIN_FAILED,192.168.1.70,Windows-PC,Incorrect password
+2026-10-28 10:12:00,user005,LOGIN_FAILED,192.168.1.70,Windows-PC,Incorrect password
+2026-10-28 10:13:00,user005,LOGIN_FAILED,192.168.1.70,Windows-PC,Incorrect password
+2026-10-28 10:14:00,user005,LOGIN_FAILED,192.168.1.70,Windows-PC,Incorrect password
+2026-10-28 12:00:00,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:00:10,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:00:20,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:00:30,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:00:40,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:00:50,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:01:00,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:01:10,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:01:20,user006,REQUEST,192.168.1.60,WebClient,Repeated request
+2026-10-28 12:01:30,user006,REQUEST,192.168.1.60,WebClient,Repeated request
