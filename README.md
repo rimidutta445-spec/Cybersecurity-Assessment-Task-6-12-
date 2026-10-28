@@ -1,76 +1,91 @@
-\# Task 6: Decode and Interpret Security Logs
 
+# Task 12: Explore a Cryptography Concept
 
+## Project Title
+SHA-256 Hashing and File Integrity Verification
 
-\## 1. Objective
+## 1. Objective
+The objective of this project is to understand SHA-256 hashing
+and demonstrate how it can help identify changes in a file.
 
-The objective of this project is to analyse sample security logs, identify unusual activities, and prepare a report explaining the findings.
+## 2. Concept Explanation
+SHA-256 is a cryptographic hash function that produces a
+256-bit hash value, usually displayed as 64 hexadecimal characters.
 
+The same input produces the same hash when the same algorithm
+is used. A small change in the input will normally produce a
+very different hash.
 
+Hashing is different from encryption because hashing is not
+designed to be reversed to recover the original content.
 
-\## 2. Project Files
+## 3. Tools Used
+- Python 3
+- Visual Studio Code
+- Python hashlib library
+- PowerShell terminal
 
-\- `log\_analyzer.py` – Analyses the security logs and detects suspicious patterns.
+## 4. Project Files
+- hash_demo.py: Calculates the SHA-256 hash and checks file integrity.
+- sample.txt: Sample file used for testing.
+- baseline.sha256: Stores the original hash for comparison.
+- screenshots/: Stores evidence of the test results.
 
-\- `sample\_logs.csv` – Contains sample security log data.
+## 5. Methodology
+1. Create a sample text file.
+2. Calculate its SHA-256 hash.
+3. Save the first hash as the baseline.
+4. Run the program again without changing the file.
+5. Modify the file and run the program again.
+6. Compare the current hash with the saved baseline.
 
-\- `findings\_report.txt` – Contains the analysis results and explanations of the findings.
+## 6. Test Results
 
+### Test 1: Baseline Creation
+The program calculated the original hash and saved it
+in baseline.sha256.
 
+Result: PASS
 
-\## 3. Requirements
+### Test 2: Unchanged File
+The file was restored to its original content.
+The current hash matched the saved baseline.
 
-\- Python 3 installed on the computer.
+Result: PASS - FILE UNCHANGED
 
-\- All three project files saved in the same folder.
+### Test 3: Modified File
+The sample file content was changed.
+The current hash did not match the saved baseline.
 
+Result: PASS - FILE MODIFIED
 
+## 7. What SHA-256 Can Protect
+- It can help detect accidental or unauthorized changes
+  when compared with a trusted reference hash.
+- It can help verify file integrity.
+- It is useful in software downloads, digital forensics,
+  and security monitoring workflows.
 
-\## 4. How to Run
+## 8. Limitations
+- Hashing does not encrypt or hide file contents.
+- A hash alone does not prove who created or sent a file.
+- A matching hash does not prove authenticity if the reference
+  hash itself is untrusted.
+- If an attacker can change both the file and its saved baseline,
+  this simple program may not detect the change.
+- SHA-256 alone is not a password-storage solution.
 
-1\. Open PowerShell.
+## 9. Conclusion
+This project demonstrated SHA-256 hashing and file integrity
+verification using Python. The tests showed that an unchanged
+file matched its saved baseline, while a modified file produced
+a different hash.
 
-2\. Navigate to the project folder:
+The experiment helped explain the usefulness and limitations
+of cryptographic hashing.
 
-&#x20;  `cd D:\\Task\_6\_Decode\_and\_Interpret\_Security\_Logs`
-
-3\. Run the program:
-
-&#x20;  `python log\_analyzer.py`
-
-4\. Review the terminal output and open `findings\_report.txt` to read the detailed report.
-
-
-
-\## 5. Test Results
-
-The program was executed successfully using the provided sample log data.
-
-
-
-\- Logs analysed: 21
-
-\- Findings generated: 4
-
-\- High severity: 1
-
-\- Medium severity: 3
-
-
-
-The findings include multiple failed logins, repeated requests, and unusual login times.
-
-
-
-\## 6. Conclusion
-
-The project demonstrates how basic log analysis can help identify suspicious security patterns. These findings are indicators that may require further investigation; they do not independently prove that an attack occurred.
-
-
-
-\## 7. Limitations
-
-The project uses sample log data and predefined detection rules. Real-world environments may require additional validation and more advanced detection methods.
-
-
-
+## 10. References
+- Python hashlib documentation:
+  https://docs.python.org/3/library/hashlib.html
+- NIST Secure Hash Standard (FIPS 180-4):
+  https://csrc.nist.gov/pubs/fips/180-4/upd1/final
